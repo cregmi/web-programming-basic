@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>String palindrome check</title>
+	</head>
+	<body>
+		<input type="button" value="Check Palindrome" onclick="checkPalindrome()">
+		<br>
+		<h3 id="result"></h3>
+		
+		<script>
+			function checkPalindrome() {
+				var regexCheck = /[^A-Za-z0-9]/g;
+				
+				var inputString = prompt("Enter string to check");
+				
+				var output = ''; 
+				
+				if(inputString){
+				
+					parsedString = inputString.toLowerCase().replace(regexCheck,'');
+					
+					var reverseString = parsedString.split('').reverse().join('');
+					
+					if (parsedString === reverseString){
+						output = "Its palindrome";
+					}else{
+						output="Not palindrome";
+					}
+					
+					document.getElementById("result").innerHTML = 'Given string :' + inputString + '<br>' + 'Parsed string :' + parsedString + '<br>' + 'Reversed parsed string :' + reverseString + '<br>' + output;
+				}else{
+					document.getElementById("result").innerHTML = 'Invalid input';
+				}
+				
+
+
+				
+			}		
+		</script>
+	</body>
+</html>

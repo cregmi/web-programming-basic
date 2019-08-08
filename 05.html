@@ -1,0 +1,91 @@
+<!-- The following code display initial balance amount as 100.
+The balance can be updated with <dialog> HTML form.
+The color of balance display is red if its less than 500, green otherwise. -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript getElement.... examples</title>
+		<style>
+			.okay{
+				color:green;
+			}
+			.low{
+				color:red;
+			}
+			.balance{
+				text-decoration:underline;
+				font-weight:800;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id="balanceContainer">
+			<p>Your balance is: <span class="balance">100</span></p>
+		</div>
+		
+		<button type="submit">Update Balance</button>
+		
+		<dialog class="forBalance">
+		
+			<form method="dialog">
+			
+				<section>
+					Enter new balance:<input id="newBalance" type="text">
+				</section>
+				
+				<menu>
+					<button type="reset">Cancel</button>
+					<button type="submit">Update</button>
+				</menu>
+				
+			</form>
+			
+		</dialog>
+		
+		<script>	
+		
+			
+			var targetTag =  document.getElementById('balanceContainer');
+			var newBalance = document.getElementById('newBalance');
+				
+			var updateBalance = document.getElementsByTagName('button').item(0);
+			var cancelButton = document.getElementsByTagName('button').item(1);
+			var updateButton = document.getElementsByTagName('button').item(2);
+				
+			var updateDialog = document.getElementsByClassName('forBalance').item(0);
+				
+			var balance = targetTag.getElementsByClassName('balance').item(0);
+				
+			if(parseInt(balance.innerHTML)<500){
+				targetTag.setAttribute('class','low');
+			}
+			else{
+				targetTag.setAttribute('class','okay');
+			}
+
+			updateBalance.addEventListener('click', function() {
+				updateDialog.showModal();
+			});
+				
+			cancelButton.addEventListener('click', function() {
+				updateDialog.close();
+			});
+				
+			updateButton.addEventListener('click',function(){
+				balance.innerHTML = parseInt(balance.innerHTML) + parseInt(newBalance.value);
+				if(parseInt(balance.innerHTML)<500){
+					targetTag.setAttribute('class','low');
+				}
+				else{
+					targetTag.setAttribute('class','okay');
+				}				
+			});
+				
+			
+		</script>
+		
+	</body>
+	
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript Navigator Object</title>
+	</head>
+	<body>	
+		<div>
+		<button type="button" onclick="showUserAgentDetails()">What's my browser?</button>
+		</div>
+		<script>		
+			function showUserAgentDetails(){
+			
+				var tagParagraph = document.createElement('p');
+				
+				var contentParagraph = document.createTextNode(navigator.appCodeName + ', click for details');
+				
+				tagParagraph.appendChild(contentParagraph);
+				
+				tagParagraph.style.fontWeight = '800';
+				tagParagraph.style.cursor = 'help';
+				
+				referenceNode = document.getElementsByTagName('script').item(0);
+				
+				document.body.insertBefore(tagParagraph, referenceNode);
+				
+				document.getElementsByTagName('p').item(0).addEventListener('click',function(){
+					this.innerHTML = navigator.userAgent;
+				});
+				
+				document.getElementsByTagName('button').item(0).removeAttribute('onclick');
+			}
+
+			
+		</script>
+	</body>
+</html>

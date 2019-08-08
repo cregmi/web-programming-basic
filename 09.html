@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Squareroot of number on input with AJAX</title>
+	</head>
+	<body style="text-align:center">
+	
+		Square root of: <input id="number" type="number" autofocus autocomplete="off"></input>
+		<h4 id="result"></h4>		
+		
+		<script>
+			document.getElementById('number').addEventListener('input',function(){
+				document.getElementById('result').innerHTML = "";
+				var givenNumber = this.value;
+				if (givenNumber){	
+					var xmlhttp = new XMLHttpRequest();
+					xmlhttp.onreadystatechange = function() {
+						if (this.readyState === XMLHttpRequest.DONE){
+							if (this.readyState == 4 && this.status == 200) {
+								document.getElementById('result').innerHTML = this.responseText;
+							}
+							else{
+								document.getElementById('result').innerHTML = 'ERROR';
+							}					
+						}
+					}
+					xmlhttp.open('GET', '09-square.php?number='+givenNumber, true);
+					xmlhttp.send();			
+				}
+			});
+		</script>
+		
+	</body>
+</html>

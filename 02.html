@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fibanacci Series</title>
+	</head>
+	<body>
+		<input type="button" value="Fibonacci series" onclick="getFibonacci()">
+		<br>
+		<h3 id="result"></h3>
+		
+		<script>
+			function getFibonacci() {
+			
+				var inputNumber = parseInt(prompt("Enter the length of fibanacci series"));
+				
+				if (isNaN(inputNumber) == false) {
+				
+					var output = '';
+					var i = 1;
+					var j = 1;
+					if(inputNumber == 0){
+						output = 'Empty series';
+					}
+					else if(inputNumber == 1){
+						output = 'Fibonacci series upto ' + inputNumber + 'th number: ' + i.toString();
+					}else{
+						output = 'Fibonacci series upto ' + inputNumber + 'th number: ' + i.toString() + ', ' + j.toString();
+					}
+						
+					var x;
+					for(x=3;x<=inputNumber;x++){
+						k = i+j;
+						i = j;
+						j = k;
+						output = output + ', ' + k.toString()
+					}
+				}
+				else{
+					output = 'Invalid input';
+				}
+				document.getElementById("result").innerHTML = output;
+			}		
+		</script>
+	</body>
+</html>

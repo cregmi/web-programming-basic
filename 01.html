@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript type conversion examples</title>
+	</head>
+	<body>
+		Enter First Number :<input type="number" id="input01" autofocus>
+		<br>
+		Enter Second Number :<input type="number" id="input02" >
+		<br>
+		<input type="button" value="Use Numbers" onclick="useNumbers()">
+		<br>
+		<h3 id="result"></h3>
+		
+		<script>
+			function useNumbers() { 
+			
+				var firstNumber = parseInt(document.getElementById("input01").value);
+				var secondNumber = parseInt(document.getElementById("input02").value);
+				
+				var addResult = firstNumber + secondNumber;
+				
+				var addResultInBinary = addResult.toString(2);
+				
+				var joinResult = firstNumber.toString() + secondNumber.toString();
+				
+				joinResultInNumber = Number(joinResult);
+				
+				joinResultInBinary = joinResultInNumber.toString(2);
+				
+				output = 'Sum is: ' + addResult + ', Sum in Binary: ' + addResultInBinary + ', String is: ' + joinResult + ', String in Binary: ' + joinResultInBinary;
+				
+				document.getElementById("result").innerHTML = output;
+			}
+		</script>
+	</body>
+</html>

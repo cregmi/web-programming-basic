@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sum, average and maximum in table</title>
+	</head>
+	<body>
+		Enter First Number :<input type="number" id="input01" autofocus>
+		<br>
+		Enter Second Number :<input type="number" id="input02" >
+		<br>
+		Enter Third Number :<input type="number" id="input03" >
+		<br>
+		<input type="button" value="Show result" onclick="useNumbers()">
+		<br>
+		<table border="1" id="result">
+			<tr>
+				<td>Sum</td>
+				<td>Average</td>
+				<td>Maximum</td>
+			</tr>
+			<tr>
+				<td id='sum'></td>
+				<td id='average'></td>
+				<td id='maximum' ></td>
+			</tr>
+		</table>
+		
+		<script>
+			function useNumbers() { 		
+				var number01 = parseInt(document.getElementById('input01').value);
+				var number02 = parseInt(document.getElementById('input02').value);
+				var number03 = parseInt(document.getElementById('input03').value);
+				document.getElementById('sum').innerHTML = number01 + number02 + number03;
+				document.getElementById('average').innerHTML = (number01 + number02 + number03)/3;
+				document.getElementById('maximum').innerHTML = Math.max(number01,number02,number03);
+			}
+		</script>
+	</body>
+</html>
