@@ -1,6 +1,8 @@
 <?php
 	session_start();
-	
+	//c - coffee, price 1 per unit
+	//m - milk, price 2 per unit
+	//ca = cake, price 3.5 per unit
 	function calculateOrders($a){
 		$c = $m = $ca = 0;
 		foreach($a as $index=>$value){
