@@ -7,5 +7,5 @@
 5. Show with simple examples how HTML elements can be accessed and their properties changed using the methods getElementsByClassName, getElementsByTagName and getElementById.
 6. Write a piece of code that recognizes the user agent on a web page.
 7. Make a class in PHP that calculates the factorial of an integer and write an example using this class. The class takes the integer as a parameter in its constructor and implements a function to calculate the factorial.
-8. Make a simple form that a user can use to order products from a web shop. Then write PHP code that receives the order and displayes the number of items purchased and the total price of the ordered products.
+8. Make a simple form that a user can use to order products from a web shop. Then write PHP code that receives the order and displays the number of items purchased and the total price of the ordered products.
 9. Make a simple Ajax application. You can for example have a PHP program, which calculates some mathematical function or returns something based on the information given by the user, and then use Ajax technology to handle the interaction between the client and the server.
