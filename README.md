@@ -1,6 +1,6 @@
-# Some basic web programming code snippets 
+### Some basic web programming code snippets 
 
-1. JavaScript usually makes type conversions automatically, but sometimes the programmer needs to write these conversions. Show code for JavaScript conversions from strings to number types and from number types to strings.  
+1. Write a piece of code for JavaScript conversions from strings to number types and from number types to strings.  
 2. Write a JavaScript program that prompts the user to give an integer value n, then computes n Fibonacci numbers.
 3. Write a JavaScript program that asks user to feed three integers. The program then calculates the sum, average and maximum of these values and prints an HTML table where the values are placed.
 4. Write a JavaScript function that tests if a given string is a palindrome.  
